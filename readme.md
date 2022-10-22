@@ -7,11 +7,11 @@ My app will be a database for the A Game Of Thrones universe. It allow users to 
 - HTML
 - CSS
 - Javascript
-- 
+- API
 
 ### Wireframes
 
-![SOme text](https://i.ytimg.com/vi/mRf3-JkwqfU/mqdefault.jpg)
+![Project One Wireframe](https://i.imgur.com/dodo3Kw.jpeg)
 
 ### Daily Plan
 
@@ -26,3 +26,4 @@ My app will be a database for the A Game Of Thrones universe. It allow users to 
 |7| Present app|
 ### Link to Project
 [My Project Live Page](https://calebhart11.github.io/unit-1-project/)
+)
