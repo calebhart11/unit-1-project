@@ -23,9 +23,9 @@ $p15 = $("#tvSeries")
 function gotData(name) {
 $.ajax(`${gotChars}${name}`)
 .then((data) =>{
-gotInfo = data
-//console.log(gotInfo, "<<here's the info")
-render(data)
+gotInfo = data[0]
+console.log(gotInfo, "<< here's the info")
+render(gotInfo)
 },
     (error) => {
         console.log("Bad Request", error)
