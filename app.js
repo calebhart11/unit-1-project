@@ -3,7 +3,8 @@ const gotBooks = "https://anapioficeandfire.com/api/books/"
 const gotChars = "https://anapioficeandfire.com/api/characters?name=" // fill spaces with %20
 const gotHouses = "https://anapioficeandfire.com/api/houses/"
 let gotInfo, userInput
-$p0 = ("# ")
+const $modal = $(".modal")
+$p0 = ("#divImg")
 $p1 = $("#name")
 $p2 = $("#titles")
 $p3 = $("#aliases")
@@ -26,13 +27,14 @@ $.ajax(`${gotChars}${name}`)
 gotInfo = data[0]
 console.log(gotInfo, "<< here's the info")
 render(gotInfo)
-},
+}, 
     (error) => {
         console.log("Bad Request", error)
 }
 )
 }
     function render(gotInfo) {
+        $("#divImg").hide();
         $p1.text(`name:  ${gotInfo.name}`)
         $p2.text(`titles:  ${gotInfo.titles}`)
         $p3.text(`aliases:  ${gotInfo.aliases}`)
@@ -57,3 +59,12 @@ render(gotInfo)
         
         gotData(userInput)
 })
+// //turn on modal
+// const toggleModal = (event) => {
+//     $modal.css("display", "flex")
+// }
+
+// //close modal
+// const closeModal = (event) => {
+//     $modal.css("display", "none")
+// }
