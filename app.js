@@ -1,3 +1,5 @@
+//=============================Assigned variables===========================================
+
 const baseUrl =  "https://anapioficeandfire.com/api/" //pagination ex: ?page=1&pageSize=10"
 const gotBooks = "https://anapioficeandfire.com/api/books/"
 const gotChars = "https://anapioficeandfire.com/api/characters?name=" // fill spaces with %20
@@ -21,6 +23,8 @@ $p13 = $("#playedBy")
 $p14 = $("#povBooks")
 $p15 = $("#tvSeries")
 
+//=======function to get the data from the selected API =========
+
 function gotData(name) {
 $.ajax(`${gotChars}${name}`)
 .then((data) =>{
@@ -33,8 +37,9 @@ render(gotInfo)
 }
 )
 }
+//==========================Function to add rendered data to the screen ===================
     function render(gotInfo) {
-        $("#divImg").hide();
+        
         $p1.text(`name:  ${gotInfo.name}`)
         $p2.text(`titles:  ${gotInfo.titles}`)
         $p3.text(`aliases:  ${gotInfo.aliases}`)
@@ -50,8 +55,13 @@ render(gotInfo)
         $p13.text(`played By:  ${gotInfo.playedBy}`)
         $p14.text(`pov Books:  ${gotInfo.povBooks}`)
         $p15.text(`TV Series:  ${gotInfo.tvSeries}`)   
+        $("#divImg").hide();
+
     }
+    //=======================function that enables the submission form ===================
     $("input[type=submit]").on("click", (event) => {
+
+        $(".img").removeClass("img")
 
         event.preventDefault()  
     
@@ -59,6 +69,7 @@ render(gotInfo)
         
         gotData(userInput)
 })
+
 // //turn on modal
 // const toggleModal = (event) => {
 //     $modal.css("display", "flex")
