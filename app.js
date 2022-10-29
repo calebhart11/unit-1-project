@@ -5,7 +5,9 @@ const gotBooks = "https://anapioficeandfire.com/api/books/"
 const gotChars = "https://anapioficeandfire.com/api/characters?name=" // fill spaces with %20
 const gotHouses = "https://anapioficeandfire.com/api/houses/"
 let gotInfo, userInput
-const $modal = $(".modal")
+// const $div = ${""}
+const $modal = $("#modalButton")
+console.log($modal)
 $p0 = ("#divImg")
 $p1 = $("#name")
 $p2 = $("#titles")
@@ -55,7 +57,7 @@ render(gotInfo)
         $p13.text(`played By:  ${gotInfo.playedBy}`)
         $p14.text(`pov Books:  ${gotInfo.povBooks}`)
         $p15.text(`TV Series:  ${gotInfo.tvSeries}`)   
-        $("#divImg").hide();
+        
 
     }
     //=======================function that enables the submission form ===================
@@ -70,12 +72,27 @@ render(gotInfo)
         gotData(userInput)
 })
 
-// //turn on modal
-// const toggleModal = (event) => {
-//     $modal.css("display", "flex")
-// }
+//turn on modal
+const toggleModal = (event) => {
+    event.preventDefault()
+    $(".img").css("display", "none")
 
-// //close modal
-// const closeModal = (event) => {
-//     $modal.css("display", "none")
-// }
+    $('.modal').css("display", "flex")
+    $('.message').css("display", "flex")
+    $('.modalHeader').text("Not Today")
+    $('.modalClose').text("Close")
+    
+    
+}
+$("#modalButton").on("click",toggleModal) 
+
+//close modal
+const closeModal = (event) => {
+    event.preventDefault()
+    $('.modal').css("display", "none")
+    $('.message').css("display", "none")
+    $(".img").css("display", "flex")
+
+
+}
+$('.modalClose').on("click", closeModal)

@@ -1,6 +1,6 @@
 # An App Of Thrones
 
-My app will be a database for the "A Game Of Thrones" universe. It allow users to search for anything regarding the book series, characters, or the houses of those characters.
+My app will be a character database for the "A Game Of Thrones" universe. 
 
 ### Technologies Used
 
